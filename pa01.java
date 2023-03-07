@@ -39,6 +39,7 @@ import java.util.Scanner;
 public class pa01 {
     public static void main(String[] args) throws FileNotFoundException {
         //Scanner keyFileInput = new Scanner(System.in);
+        System.out.println();
         String keyFileName = args[0];
         File keyFile = new File(keyFileName);
         Scanner keyFileScanner = new Scanner(keyFile);
@@ -56,12 +57,8 @@ public class pa01 {
         System.out.println("Key matrix:");
         for (int i = 0; i<matrixSize; i++){
             for (int k = 0; k < matrixSize; k++){
-
-                System.out.print(" ");
-                System.out.print(" ");
-                System.out.print(" ");
             
-                System.out.print(matrix[i][k] + " ");
+                System.out.printf("%4d",  matrix[i][k]);
                 if (k == matrixSize - 1){
                     System.out.println();
                 }
@@ -79,14 +76,14 @@ public class pa01 {
         File inputFile = new File(plaintextFileName);
 
         // Create a Scanner object to read from the text file
-        Scanner scanner = new Scanner(inputFile);
+        Scanner scanner = new Scanner(inputFile, "UTF-8");
 
         // Use a StringBuilder to accumulate only the alphabetical characters
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder(100000);
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
             for (char c : line.toCharArray()) {
-                if (c >= 'A' && c <= 'z') {
+                if (c >= 'A' && c <= 'z' && c != '[' && c!= ']' && c!= '_') {
                     builder.append(c);
                 }
             }
@@ -98,7 +95,8 @@ public class pa01 {
         scanner.close();
 
         // Convert the StringBuilder to a char array
-        char[] charArray = builder.toString().toLowerCase().toCharArray();
+        char[] charArray = new char[10000];
+        charArray = builder.toString().toLowerCase().toCharArray();
         
         
 

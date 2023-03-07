@@ -1,8 +1,9 @@
+
 Key matrix:
-   77    52    51    43 
-   55    9    31    44 
-   3    18    21    45 
-   15    19    71    46 
+  77  52  51  43
+  55   9  31  44
+   3  18  21  45
+  15  19  71  46
 
 Plaintext:
 halfacenturyagomitplayedacriticalroleinthedevelopmentoftheflightsoftwarefornasas
